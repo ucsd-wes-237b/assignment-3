@@ -3,6 +3,6 @@ __kernel void matrixMultiply(
     const unsigned int numARows, const unsigned int numAColumns,
     const unsigned int numBRows, const unsigned int numBColumns,
     const unsigned int numCRows, const unsigned int numCColumns) {
-  //@@ Compute C = A^T B 
+  //@@ Compute C = AB 
   
 }

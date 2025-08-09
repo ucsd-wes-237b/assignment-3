@@ -11,9 +11,9 @@ Edit the code in the code tab to perform the following:
 * Invoke OpenCL kernel
 * Copy results from device to host
 * Deallocate device memory
-* Implement the matrix-matrix multiplication routine using shared memory and tiling
+* Implement the matrix-matrix multiplication routine using shared memory and tiling and vectorization extensions
 
-Recommended Block dimensions are $16 \times 16$.
+Recommended Block dimensions are $16 \times 16$ with a datatype of `int16`.
 
 ## Files and Directories
 
