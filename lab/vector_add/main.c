@@ -305,7 +305,7 @@ int main(int argc, char *argv[])
     const char *answer_file = argv[5];
     const char *program_1_output_file = argv[6];
     const char *program_2_output_file = argv[7];
-    const char *program_3_output_file = argv[7];
+    const char *program_3_output_file = argv[8];
 
     // Host input and output vectors
     Matrix host_input_1, host_input_2, host_input_3, host_input_4, host_output, answer;
