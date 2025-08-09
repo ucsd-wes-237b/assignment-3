@@ -207,31 +207,6 @@ void part2(Matrix* host_input_1, Matrix* host_input_2, Matrix* host_input_3, Mat
     //@@ Release OpenCL objects here
 }
 
-void part3(Matrix* host_input_1, Matrix* host_input_2, Matrix* host_input_3, Matrix* host_input_4, Matrix* host_output, Matrix* answer, const char* output_file) {
-    // Start of program three
-
-    // OpenCL objects
-    cl_device_id device_id;             // device ID
-    cl_context context;                 // context
-    cl_command_queue queue;             // command queue
-
-    initializeOpenCL(&device_id, &context, &queue);
-
-    callVectorAdd4KernelVectorized(host_input_1, host_input_2, host_input_3, host_input_4, host_output, &context, &queue);
-
-    // Prints the results
-    // for (unsigned int i = 0; i < host_output.shape[0] * host_output.shape[1]; i++)
-    // {
-    //     printf("C[%u]: %d == %d\n", i, host_output.data[i], answer.data[i]);
-    // }
-
-    // Check whether the answer matches the output
-    CheckMatrix(answer, host_output);
-    SaveMatrix(output_file, host_output);
-
-    //@@ Release OpenCL objects here
-}
-
 void callVectorAdd4KernelVectorized(Matrix* a, Matrix* b, Matrix* c, Matrix* d, Matrix* out, cl_context* context, cl_command_queue* queue) {
     // OpenCL objects
     cl_program program;                 // program
@@ -288,6 +263,31 @@ void callVectorAdd4KernelVectorized(Matrix* a, Matrix* b, Matrix* c, Matrix* d, 
 
     // Release Host Memory
     free(kernel_source);
+}
+
+void part3(Matrix* host_input_1, Matrix* host_input_2, Matrix* host_input_3, Matrix* host_input_4, Matrix* host_output, Matrix* answer, const char* output_file) {
+    // Start of program three
+
+    // OpenCL objects
+    cl_device_id device_id;             // device ID
+    cl_context context;                 // context
+    cl_command_queue queue;             // command queue
+
+    initializeOpenCL(&device_id, &context, &queue);
+
+    callVectorAdd4KernelVectorized(host_input_1, host_input_2, host_input_3, host_input_4, host_output, &context, &queue);
+
+    // Prints the results
+    // for (unsigned int i = 0; i < host_output.shape[0] * host_output.shape[1]; i++)
+    // {
+    //     printf("C[%u]: %d == %d\n", i, host_output.data[i], answer.data[i]);
+    // }
+
+    // Check whether the answer matches the output
+    CheckMatrix(answer, host_output);
+    SaveMatrix(output_file, host_output);
+
+    //@@ Release OpenCL objects here
 }
 
 int main(int argc, char *argv[])
