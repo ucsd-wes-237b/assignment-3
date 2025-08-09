@@ -20,7 +20,7 @@ Instructions about where to place each part of the code is demarcated by the `//
 
 How to Compile
 ^^^^^^^^^^^^^^
-The :code:`main.c`, :code:`vector_add_2.cl`, and :code:`vector_add_4.cl` files contain the code for the programming assignment. There is a Makefile included which compiles it. It can be run by typing :code:`make` from the PA2 folder. It generates a :code:`solution` output file. During development, make sure to run the :code:`make clean` command before running :code:`make`. 
+The :code:`main.c`, :code:`vector_add_2.cl`, :code:`vector_add_4.cl`, and :code:`vector_add_4_vectorized.cl` files contain the code for the programming assignment. There is a Makefile included which compiles it. It can be run by typing :code:`make` from the PA2 folder. It generates a :code:`solution` output file. During development, make sure to run the :code:`make clean` command before running :code:`make`. 
 
 How to Test
 ^^^^^^^^^^^
@@ -32,4 +32,4 @@ The dataset required to test the program is already generated. If you are intere
 
 Submission
 ^^^^^^^^^^
-In your report, discuss the time differenes between :code:`vector_add_2` and :code:`vector_add_4`. What causes these differences?
+In your report, discuss the time differenes between :code:`vector_add_2` and :code:`vector_add_4` and :code:`vector_add_4_vectorized`. What causes these differences?

@@ -1,6 +1,6 @@
-# Tiled Matrix Multiplication
+# Vectorized Tiled Matrix Multiplication
 ## Objective
-Implement a tiled dense matrix multiplication routine using shared memory.
+Implement a tiled dense matrix multiplication routine using shared memory and vector types.
 
 ## Instructions
 Edit the code in the code tab to perform the following:
@@ -25,7 +25,7 @@ Recommended Block dimensions are $16 \times 16$ with a datatype of `int16`.
 The `main.c`, `kernel.cl` files contains the code for the programming assignment. There is a Makefile included which compiles it and links it with the `helper_lib` library automatically. It can be run by typing make from the `opencl_tiled_mm` folder. It generates a `solution` output file.
 
 ## How to Test
-Use the make run command to test your program. here are a total of 9 tests on which your program will be evaluated for (functional) correctness. Since PA3 and PA4 are functionally the same, we will use the last test case to verify if your programs meet the speedup requirements that you should get using shared memory.
+Use the make run command to test your program. here are a total of 9 tests on which your program will be evaluated for (functional) correctness. Since part 1, 2, and 3 are functionally the same, we will use the last test case to verify if your programs meet the speedup requirements that you should get using shared memory.
 
 ## Submission
 Submit the GitHub repo to Gradescope.
