@@ -292,9 +292,9 @@ void callVectorAdd4KernelVectorized(Matrix* a, Matrix* b, Matrix* c, Matrix* d, 
 
 int main(int argc, char *argv[])
 {
-    if (argc != 8)
+    if (argc != 9)
     {
-        fprintf(stderr, "Usage: %s <input_file_0> <input_file_1> <input_file_2> <input_file_3> <answer_file> <output_file_program_1> <output_file_program_2>\n", argv[0]);
+        fprintf(stderr, "Usage: %s <input_file_0> <input_file_1> <input_file_2> <input_file_3> <answer_file> <output_file_program_1> <output_file_program_2> <output_file_program_3>\n", argv[0]);
         return -1;
     }
 
@@ -305,6 +305,7 @@ int main(int argc, char *argv[])
     const char *answer_file = argv[5];
     const char *program_1_output_file = argv[6];
     const char *program_2_output_file = argv[7];
+    const char *program_3_output_file = argv[7];
 
     // Host input and output vectors
     Matrix host_input_1, host_input_2, host_input_3, host_input_4, host_output, answer;
@@ -362,6 +363,17 @@ int main(int argc, char *argv[])
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC * 1000; // Convert to milliseconds
     printf("Execution time: %.2fms\n", cpu_time_used);
     printf("==============Finished Program 2==============\n");
+
+    // =================================================================
+    printf("==============Starting Program 3==============\n");
+    start = clock();
+
+    part3(&host_input_1, &host_input_2, &host_input_3, &host_input_4, &host_output, &answer, program_3_output_file);
+    
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC * 1000; // Convert to milliseconds
+    printf("Execution time: %.2fms\n", cpu_time_used);
+    printf("==============Finished Program 3==============\n");
 
 
 
