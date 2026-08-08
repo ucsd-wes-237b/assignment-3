@@ -2,19 +2,22 @@
 The focus of this assignment is to take your matrix multiplication from Assignment 2 and adapt it to run on OpenCL.
 
 ## Lab
-The focus of this lab is to show you SIMD in OpenCL.
 
-### Vector Add Vectorized
-This lab is focused on introducing vectorization in `vector_add`.  Feel free to copy your code from your submission for assignment 1.  For the steps for this lab, see `./lab/vector_add/README.rst`.
+### ARM Neon Intrinsics Demo
+Starting from the summing loop in `./lab/neon/main.c`, we should update this to use the ARM Neon intrinsics.  Please see the resources.  For the steps for this lab, see `./lab/neon/README.md`.
 
 ## Homework
 The goal of this is to accelerate your matrix multiply from Assignment 2.  You may directly use code from the previous assignment here.
 
+### Neon Block Matrix Multiply
+The first part of this homework is to implement a block matrix multiply using ARM Neon for vectorization.  This gives you a CPU SIMD baseline to compare the OpenCL versions against.  For the steps for this, see `./homework/block_mm_neon/README.md`.
+
 ### OpenCL Naive MM
-The first part of this homework assignment is to adapt your naive matrix multiplication to OpenCL.  For the steps for this, see `./homework/opencl_naive_mm/README.md`.
+The second part of this homework assignment is to adapt your naive matrix multiplication to OpenCL.  For the steps for this, see `./homework/opencl_naive_mm/README.md`.
 
 ### OpenCL Tiled MM
-The second part of this homework is to take your OpenCL naive matrix multiplication and apply OpenCL optimizations.  For the steps for this, see `./homework/opencl_tiled_mm`.
+The third part of this homework is to take your OpenCL naive matrix multiplication and apply OpenCL optimizations.  For the steps for this, see `./homework/opencl_tiled_mm`.
 
-### OpenCL Tiled MM Vectorized
-The third part of this homework is to take your OpenCL naive matrix multiplication and apply additional optimizations.  For the steps for this, see `./homework/opencl_tiled_mm_vectorized`.
+## Resources
+
+* [ARM Neon Instruction Reference](https://developer.arm.com/architectures/instruction-sets/intrinsics/#f:@navigationhierarchiessimdisa=%5BNeon%5D&f:@navigationhierarchiesreturnbasetype=%5Bfloat%5D&f:@navigationhierarchieselementbitsize=%5B32%5D)
